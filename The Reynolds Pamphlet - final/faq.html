@@ -1,0 +1,298 @@
+<!doctype html> 
+<html lang="en-us"> 
+<head> 
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width,height=device-height,minimum-scale=1.0, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/faq.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap" rel="stylesheet">
+
+    <style>
+        /* Sliding Side Panel */
+        .side-panel {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            background-color: #fff;
+            overflow-x: hidden;
+            transition: 0.5s;
+        }
+    
+        /* Styling for the top and bottom sections */
+        .top-links {
+          position: absolute;
+          top: 20px; /* Distance from the top */
+        }
+    
+        .bottom-links {
+          position: absolute;
+          bottom: 20px; /* Distance from the bottom */
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          margin-left: 50px;
+        }
+    
+        .side-panel a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 25px;
+            color: black;
+            display: block;
+            transition: 0.3s;
+        }
+    
+        .top-links a:hover {
+            background-color: #ffd8e3;
+        }
+    
+        .side-panel .close-btn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            display: block;
+        }
+    
+        .open-btn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: white;
+            color: black;
+            padding: 5px 10px;
+            border: none;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 30px;  /* Adjusted to be closer */
+            z-index: 1000;
+        }
+    
+        .open-btn:hover {
+            background-color: #ffff;
+        }
+    
+        /* Adjusting content to shift when side panel is open */
+        .main-content {
+            transition: margin-left 0.5s;
+        }
+    
+        @media (max-width: 768px) {
+    
+        .playwrite-cu {
+          font-size: small;
+        }
+    
+        .nav-bar li {
+        margin-right: 0px;
+      }
+    }
+    
+    
+        .header-panel {
+        position: fixed; /* Makes the header stick to the top */
+        top: 0;
+        left: 0;
+        width: 100%; /* Ensures the header spans the full width */
+        padding: 10px 0 10px 85px; /* Reduced left padding */
+        /* background: white;  Transparent background initially */
+        color: #000000; /* Text color */
+        display: inline-flex; /* Centers and aligns the header items */
+        align-items: center; /* Vertically aligns items */
+        z-index: 100; /* Ensures the header stays above other elements */
+        transition: background-color 0.3s ease; /* Smooth background color change */
+        background: white;
+      }
+    
+        /* Title style */
+        .header-panel h1 {
+            font-family: 'Playwrite CU', cursive;
+            margin: 0;
+        }
+    
+        /* Navigation and right-side elements */
+        .nav-bar ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            overflow: hidden;
+        }
+    
+        .nav-bar ul li {
+            margin-left: 15px;
+        }
+    
+    </style>
+
+</head> 
+<body>
+    <!-- Sliding Side Panel -->
+  <div id="mySidePanel" class="side-panel">
+    <div class = "top-links">
+    <a href="Home.html"><i class="fa-solid fa-home"></i> Home</a>
+    <a href="Feed.php"><i class="fa-solid fa-comments"></i> Feedback</a>
+    </div>
+
+
+</div>
+
+<!-- Header with the Side Panel Button -->
+<div class="header-panel" >
+<a href="javascript:void(0)" class="open-btn" onclick="myFunction()"><i class="fa-solid fa-bars" style="font-size: 30px;"></i></a>
+    <h1 class="playwrite-cu">The Reynolds Pamphlet</h1>
+</div>
+
+          <!-- Login Popup -->
+          <div id = "login-popup" class = "popup">
+            <div class = "popup-content">
+              <a href = "#" class = "close-btn">&times;</a>
+              <h2>Login</h2>
+              <form action = "confessions.php" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Sign Up Popup --->
+            <div id = "signup-popup" class = "popup">
+                <div class = "popup-content">
+                <a href = "#" class = "close-btn">&times;</a>
+                <h2>Sign Up</h2>
+                <form action = "confessions.php" method="post">
+                    <label for="username">Name:</label>
+                    <input type="text" id="Name" name="Name" required>
+                    <label for="username">Last Name:</label>
+                    <input type="text" id="lastname" name="LastName" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="Email" name="Email">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <button type="submit">Sign up</button>
+                </form>
+                </div>
+            </div> 
+
+    <a href="index.html"><img src="back-arrow.png" alt="Back" height="20px" width="25px"></a>
+
+    <div class = "main-content">
+    <main>
+        
+        <div id="faqs">
+            <h1 id="faqs-heading" style="padding-bottom: 20px;">Frequently Asked Questions (FAQ)</h1>
+            <ol>
+                <li>
+                    <h3>What is The Reynolds Pamphlet?</h3>
+                    <p>The Reynolds Pamphlet is an interactive online platform designed to provide users with a safe space to share their thoughts, confessions, and experiences anonymously. Developed by the Gears of Miracles team, the project aims to create a community-driven environment where users can express themselves freely without the fear of judgment or reprisal.</p>
+                </li>
+                <li>
+                    <h3>How do I submit a confession?</h3>
+                    <p>To submit a confession, simply navigate to the submission form on our website. You can share your thoughts or experiences without revealing your identity. Once submitted, your confession will be reviewed by an administrator before it is published.</p>
+                </li>
+                <li>
+                    <h3>How is my submission reviewed?</h3>
+                    <p>All submissions are reviewed by an administrator to ensure that they adhere to our community guidelines. The admin checks for any harmful or inappropriate content before approving and publishing the confession on the main page.</p>
+                </li>
+                <li>
+                    <h3>Can I remain anonymous?</h3>
+                    <p>Yes, you submit confessions anonymously. Your identity will not be disclosed when your confession is published, ensuring that you can share your thoughts and experiences without fear.</p>
+                </li>
+                <li>
+                    <h3>What happens to my confession after submission?</h3>
+                    <p>Once your confession is approved by an administrator, it will be displayed on the main page where other users can read, react to, and engage with it. This helps foster a sense of connection among users with similar experiences.</p>
+                </li>
+                <li>
+                    <h3>Is The Reynolds Pamphlet mobile-friendly?</h3>
+                    <p>Yes, The Reynolds Pamphlet is designed to be fully responsive. This means that the site adjusts automatically to provide a seamless experience across various devices, including desktops, tablets, and smartphones.</p>
+                </li>
+                <li>
+                    <h3>What are the community guidelines?</h3>
+                    <p>Our community guidelines are in place to promote a respectful and supportive environment. Users are encouraged to interact thoughtfully with the content and to adhere to principles of respect and empathy.</p>
+                </li>
+                <li>
+                    <h3>How can I contact The Reynolds Pamphlet support?</h3>
+                    <p>If you have any questions or need assistance, you can contact The Reynolds Pamphlet support via the contact form available on our website or by sending an email to our support team at support@The Reynolds Pamphlet.com.</p>
+                </li>
+                <li>
+                    <h3>Can I edit or delete my confession after submission?</h3>
+                    <p>Currently, once a confession is submitted and approved, it cannot be edited or deleted by the user. If you need to make changes, please contact support with your request.</p>
+                </li>
+                <li>
+                    <h3>How does The Reynolds Pamphlet ensure user privacy and safety?</h3>
+                    <p>The Reynolds Pamphlet is committed to user privacy and safety. We utilize secure technology to protect user data and ensure that all submissions remain anonymous. Our moderation process is designed to maintain a positive and respectful community.</p>
+                </li>
+            </ol>
+        </div>
+    </main>
+    </div>
+
+    
+
+    <footer style="margin-top: 50px;">
+        <div class="item">
+        <p>
+            <h4><p class="playwrite-cu">The Reynolds Pamphlet</p> &copy;2024 | Contact Us on GitHub: <a href="https://github.com/Wakag/Gears-of-Miracles" style=" color: #944a8a;">Gears-of-Miracles</a></h4>
+        </p>
+        </div>
+        <div class="item">
+            
+            <table style="align-items: right;">
+                <tr><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram fa-2x">&nbsp;&nbsp;</i></a></tr>
+                <tr><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook fa-2x">&nbsp;&nbsp;</i></a></tr>
+                <tr><a href="https://www.tiktok.com/explore"><i class="fa-brands fa-tiktok fa-2x">&nbsp;&nbsp;</i></a></tr>
+                <tr><a href="https://youtu.be/x_MQRNkRaUE?si=6zN4suQm9a3nL4y1"><i class="fa-brands fa-youtube fa-2x">&nbsp;&nbsp;</i></a></tr>
+            </table>
+        </div>
+      </footer>
+      <script src="JS/faq.js"></script>
+
+      <script>
+        // JavaScript to open and close the side panel
+        function myFunction() {
+            var x = document.getElementById("mySidePanel");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+                closePanel();
+            } else {
+                x.style.display = "block";
+                openPanel(); 
+            }
+        }
+            
+        function openPanel() {
+            document.getElementById("mySidePanel").style.width = "250px";
+            document.querySelector('.main-content').style.marginLeft = "250px";
+            document.querySelector('.header-panel').style.marginLeft = "250px";
+            document.getElementsByTagName("footer")[0].style.marginLeft = "250px";
+            document.getElementsByTagName("footer")[0].style.flexDirection = "column";
+            document.getElementsByTagName("footer")[0].style.alignItems = "center";
+            document.getElementsByTagName("footer")[0].style.textAlign = "center";
+            document.querySelector('.nav-bar').style.marginRight = "130px";
+      
+      
+        }    
+        
+      
+        function closePanel() {
+            document.getElementById("mySidePanel").style.width = "0";
+            document.querySelector('.main-content').style.marginLeft = "0";
+            document.querySelector('.header-panel').style.marginLeft = "0";
+            document.getElementsByTagName("footer")[0].style.marginLeft = "0";
+            document.querySelector('.nav-bar').style.marginRight = "0";
+            document.getElementsByTagName("footer")[0].style.display = "flex";
+            document.getElementsByTagName("footer")[0].style.alignItems = "center";
+            document.getElementsByTagName("footer")[0].style.justifyContent = "space-around";
+        }
+      </script>
+</body>
+</html>

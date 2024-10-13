@@ -1,0 +1,809 @@
+body{
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background:  #f4f4f4; /* Gradient adjustment */
+  min-height: 100vh;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat; 
+}
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*{
+  scroll-behavior: smooth;
+}
+section {
+  padding: 10rem 3% 2rem;
+  
+}
+
+nav {
+  box-shadow: 0 .1rem 1rem grey;
+}
+
+.item {
+  flex: 1; /* Makes each item take equal space */
+ 
+}
+
+
+    /* Sliding Side Panel */
+    .side-panel {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        overflow-x: hidden;
+        transition: 0.5s;
+    }
+
+    .side-panel a {
+        padding: 10px 15px;
+        text-decoration: none;
+        font-size: 25px;
+        color: black;
+        display: block;
+        transition: 0.3s;
+    }
+
+    /* Styling for the top and bottom sections */
+    .top-links {
+      position: absolute;
+      top: 20px; /* Distance from the top */
+    }
+
+    .bottom-links {
+      position: absolute;
+      bottom: 20px; /* Distance from the bottom */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-left: 50px;
+    }
+
+    .top-links a:hover {
+        background-color: #ffd8e3;
+    }
+
+
+    .side-panel .close-btn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        display: block;
+    }
+
+    .open-btn {
+        font-size: 20px;
+        cursor: pointer;
+        background-color: white;
+        color: black;
+        padding: 5px 10px;
+        border: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 30px;  /* Adjusted to be closer */
+        z-index: 1000;
+    }
+
+    .open-btn:hover {
+        background-color: #ffff;
+    }
+
+    /* Adjusting content to shift when side panel is open */
+    .main-content {
+        transition: margin-left 0.5s;
+    }
+
+    @media screen and (max-width: 768px) {
+
+    .playwrite-cu {
+      font-size: small;
+    }
+
+    .right-bar li {
+    margin-right: 0px;
+  }
+
+  
+}
+
+
+    .header-panel {
+    position: fixed; /* Makes the header stick to the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensures the header spans the full width */
+    padding: 10px 0 10px 85px; /* Reduced left padding */
+    /* background: white;  Transparent background initially */
+    color: #000000; /* Text color */
+    display: inline-flex; /* Centers and aligns the header items */
+    align-items: center; /* Vertically aligns items */
+    z-index: 100; /* Ensures the header stays above other elements */
+    transition: background-color 0.3s ease; /* Smooth background color change */
+    background: white;
+  }
+
+    /* Title style */
+    .header-panel h1 {
+        font-family: 'Playwrite CU', cursive;
+        margin: 0;
+    }
+
+    /* Navigation and right-side elements */
+    .nav-bar ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        right: 15px;
+        overflow: hidden;
+    }
+
+    .nav-bar ul li {
+        margin-left: 15px;
+    }
+
+
+/* Roboto bold font style */
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 800; /* Bold text */
+}
+
+
+.playwrite-cu {
+  font-family: "Playwrite CU", cursive;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* Right bar containing navigation and buttons */
+.right-bar {
+  display: flex; /* Flexbox layout for horizontal alignment */
+  list-style-type: none; /* Removes list bullets */
+  justify-content: flex-end; /* Aligns the navigation to the right */
+  align-items: center; /* Vertically aligns the items */
+  flex-grow: 0.8; /* Fills the available space */
+}
+
+/* Custom button styles */
+.custom-button {
+  background-color: #EA638C; /* Button background */
+  color: #360a30; /* Button text color */
+  padding: 10px 20px; /* Padding inside the button */
+  border: none; /* Removes border */
+  border-radius: 5em; /* Rounds the corners */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  font-size: 16px; /* Button font size */
+  font-weight: bold; /* Makes the button text bold */
+  transition: background-color 0.3s ease; /* Smooth color change on hover */
+}
+
+/* Button hover effect */
+.custom-button:hover {
+  background-color: #f8d4fd; /* Button background on hover */
+}
+
+/* Button active (clicked) effect */
+.custom-button:active {
+  background-color: #a29bfe; /* Button background when clicked */
+}
+
+/* Button focus effect */
+.custom-button:focus {
+  outline: none; /* Removes the default outline */
+  box-shadow: 0 0 0 3px rgba(255, 42, 173, 0.5); /* Adds a shadow for focus state */
+}
+
+/* Navigation link styles */
+.navigation a {
+  text-decoration: none; /* Removes the underline from links */
+  padding: 0.5rem 1rem; /* Adds space around links */
+  font-size: 1rem; /* Font size */
+  color: #3a0232; /* Text color */
+  font-family: "Roboto", sans-serif; /* Font family */
+  font-weight: 700; /* Normal font weight */
+}
+
+/* Right bar list item styles */
+.right-bar li {
+  display: inline; /* Makes list items display inline */
+  margin-right: 15px; /* Adds space between the list items */
+}
+/* Home section image */
+.home-img {
+  filter: blur(0px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  object-fit: cover; /* Cover the entire space */
+  object-position: 83%; /* Adjust the image's position */
+}
+
+/* Home content container */
+.home-content {
+  position: relative;
+  height: calc(100vh - var(--header-height)); 
+  justify-content: center;/* Full height minus header */
+  align-content: center;
+  row-gap: 1.5rem; /* Space between rows */
+  padding-top: 50px; 
+  margin-left: 30%;/* Space under the header */
+}
+
+/* Home section text (subtitle and title) */
+.home-subtitle, 
+.home-title, 
+.social-link, 
+.info-box {
+  color: #fff; /* White text color */
+}
+
+/* Home subtitle */
+.home-subtitle {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 5rem; 
+  /* Space below the subtitle */
+}
+
+/* Home title */
+.home-title {
+  font-size: 2.7rem;
+  font-weight: 600; /* Medium font weight */
+  margin-bottom: 10px;
+  color: #430d20;
+  padding-left: 5%;
+  line-height: 1.5;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500; /* Space below the title */
+}
+
+
+/*#Confessions {
+  margin-top: 100%;
+}*/
+
+
+
+@media screen and (max-width: 600px) {
+
+  .home-title {
+    font-size: 2em;
+  }
+  
+}
+
+@media screen and (max-width: 450px) and (min-width: 376px) {
+
+  .home-title {
+    font-size: 2em;
+  }
+  
+}
+
+.center-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 10vh; /* Full height of the viewport */
+}
+
+
+
+
+/*--------------------------Tester--------------------------------*/
+
+
+
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust min width as needed */
+  max-width: 1250px;
+  margin: 150px auto;
+  padding: 20px;
+  gap: 20px;
+}
+
+
+.card-list .card-item {
+  background-color: #ffd8e3 ;
+  padding: 26px;
+  border-radius: 8px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.04);
+  list-style: none;
+  cursor: pointer;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: border 0.5s ease;
+}
+.card-list .card-item:hover {
+  border: 2px solid #850d37;
+}
+.card-list .card-item img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.card-list span {
+  display: inline-block;
+  background: #6c1865;
+  margin-top: 32px;
+  padding: 8px 15px;
+  font-size: 0.75rem;
+  border-radius: 50px;
+  font-weight: 600;
+}
+.card-list .developer  {
+  background-color: #f4f4f4;
+  color: #B22485;
+}   
+.card-list .designer{
+  background-color: #f4f4f4;
+  color: #B22485;
+}
+.card-list .editor {
+  background-color: #f4f4f4;
+  color: #B22485;;
+}
+.card-item h3 {
+  color: #000;
+  font-size: 1.438rem;
+  margin-top: 28px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+.card-item .arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-35deg);
+  height: 40px;
+  width: 40px;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 50%;
+  margin-top: 40px;
+  transition: 0.2s ease;
+}
+.card-list .card-item:hover .arrow  {
+  background: #000;
+  color: #fff; 
+}
+
+
+.card-item {
+  min-width: 300px; /* Width of each card */
+  margin: 0 10px; /* Space between cards */
+}
+
+/* Button styles */
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 10;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+@media (max-width: 1200px) {
+  .card-list .card-item {
+      padding: 15px;
+  }
+}
+@media screen and (max-width: 980px) {
+  .card-list {
+      margin: 0 auto;
+  }
+}
+/*------------------------------- Dropdown ------------------------------*/
+
+/* General styles for the dropdown */
+.custom-dropdown {
+  appearance: none; /* Remove default styling */
+  padding: 10px 15px;
+  background-color: #EA638C; /* Soft pink background */
+  border: 1px solid #e57373; /* Slightly darker pink border */
+  border-radius: 20px; /* Rounded corners */
+  font-size: 14px;
+  color: #333; /* Dark text for readability */
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Add an arrow icon for a custom appearance */
+.custom-dropdown::after {
+  
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* Prevent the arrow from blocking clicks */
+  color: #EA638C; /* Matching arrow color */
+}
+
+/* Add hover effects for a polished look */
+.custom-dropdown:hover {
+  background-color: #ffccd5; /* Lighter pink on hover */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Subtle shadow effect */
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #ffccd5;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/*--------------------Pop-up------------------------*/
+
+/* Flexbox for input groups */
+.input-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.input-item {
+  flex: 1; /* Make inputs take equal width */
+}
+
+@media screen and (max-width: 600px) {
+  /* Stack the inputs vertically on small screens */
+  .input-group {
+      flex-direction: column;
+  }
+}
+
+/* Other existing styles */
+.popup {
+display: none;
+position: fixed;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.5);
+justify-content: center;
+align-items: center;
+}
+
+.popup-content {
+background: white;
+padding: 50px;
+border-radius: 8px;
+width: 400px;
+text-align: center;
+position: relative;
+}
+
+.popup-content h2 {
+font-family: "Playwrite CU", cursive;
+font-size: 24px;
+font-weight: bold;
+color:#2f091b;
+margin-bottom: 20px;
+}
+
+.popup-content label {
+font-family: "Roboto", sans-serif;
+font-size: 1.2em;
+font-weight: bold;
+color:#2f091b;
+display: block;
+margin: 10px 0 5px;
+}
+
+.popup-content input {
+width: 100%;
+padding: 10px;
+margin: 10px 0;
+box-sizing: border-box;
+font-size: 1.1em;
+border-radius: 5px;
+}
+
+.popup-content button {
+background-color: #EA638C;
+color: #360a30;
+padding: 10px 20px;
+border: none;
+border-radius: 5em;
+cursor: pointer;
+font-size: 16px;
+font-weight: bold;
+transition: background-color 0.3s ease;
+}
+
+.popup-content button:hover {
+background-color: #f8d4fd;
+}
+
+.popup-content button:active {
+background-color: #a29bfe;
+}
+
+.popup-content button:focus {
+outline: none;
+box-shadow: 0 0 0 3px rgba(255, 42, 173, 0.5);
+}
+
+.close-btn {
+position: absolute;
+top: 10px;
+right: 10px;
+font-size: 20px;
+cursor: pointer;
+text-decoration: none;
+color: black;
+}
+
+#signup-popup:target {
+display: flex;
+}
+#login-popup:target {
+  display: flex;
+  }
+
+/*--------------------------Search Bar-------------------------*/
+
+
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  background-color: #ffffff;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  padding: 10px 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  width: 50%;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  padding: 10px;
+  flex: 1;
+  font-size: 16px;
+  color: #333;
+  border-radius: 25px 0 0 25px;
+  width: 80%;
+  max-width: 500px;
+}
+
+.search-input::placeholder {
+  color: #3a0232;
+}
+
+.search-button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+  color: #333; /* Color of the search icon */
+}
+.search-button i {
+  font-size: 20px;
+}
+
+.search-button:hover {
+  background-color: #e0e0e0; /* Optional: Adds a hover effect */
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+  .search-input {
+      width: 90%;  /* Make the search bar wider on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .search-input {
+      width: 100%;  /* Take full width on very small screens */
+  }
+}
+
+
+/*----------FOOTER-----------*/
+  footer{
+    background-color: #ffd8e3;
+    width: 100%;
+    top: 0;
+    left: 0;
+    align-items: center; 
+    padding: 5%;
+    display: flex; /* Enables Flexbox layout */
+    gap: 20px; /* Adds space between items */
+    justify-content: space-around; /* Distributes items evenly */
+  }
+
+  @media screen and (max-width: 768px) {
+    footer {
+      flex-direction: column; /* Switch to column layout */
+      align-items: center; /* Center items in the middle */
+      text-align: center;
+    }
+
+  }
+
+
+/* Make inputs display side by side */
+
+/*@media screen and (min-width: 1000px) {
+  #Confessions {
+    margin-top: 30%;
+  }
+}*/
+
+@media screen and (max-width: 768px) {
+  body {
+      background-size: cover; /* Adjusts for smaller screens */
+  }
+
+  /*#Confessions {
+    margin-top: 50%;
+  }*/
+}
+
+@media screen and (max-width: 480px) {
+  body {
+
+    background-position: center center;
+  }
+
+  /*#Confessions {
+    margin-top: 100% ;
+  }*/
+}
+
+@media screen and (max-width: 320px) {
+  body {
+      background-size: cover; /* Ensures full coverage for very small devices */
+  }
+}
+
+.floating-button {
+  position: fixed; /* Keeps it in place */
+  bottom: 20px; /* Distance from the bottom */
+  RIGHT: 20px; /* Distance from the left */
+  background-color: #EA638C; /* Button color */
+  border-radius: 50%; /* Circular shape */
+  padding: 20px; /* Button size */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  z-index: 999; /* Ensures it's on top */
+}
+
+
+/*Radio Buttons*/
+.radio-group {
+  display: flex;
+  justify-content: space-around; /* Space out the buttons */
+  width: 100%; /* Full width of the parent container */
+  margin: 0 auto; /* Center the group if needed */
+}
+
+.radio-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex: 1; /* Make all buttons equal width */
+  text-align: center; /* Center the text in each button */
+}
+
+.radio-container input {
+  display: none; /* Hide the default radio button */
+}
+
+.checkmark {
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border: 2px solid #EA638C;
+  border-radius: 50%; /* Make it circular */
+  margin-right: 10px;
+  position: relative;
+  transition: background-color 0.2s;
+  display: inline-block;
+}
+
+/* Create the checked effect */
+.radio-container input:checked + .checkmark {
+  background-color: #EA638C;
+}
+
+/* Create the inner dot */
+.radio-container input:checked + .checkmark:after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%; /* Make it circular */
+  background: white; /* Dot color */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .radio-group {
+      flex-direction: column; /* Stack buttons vertically on small screens */
+  }
+}

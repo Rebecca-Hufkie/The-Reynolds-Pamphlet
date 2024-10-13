@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/make_confession.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <title>Make a Confession</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <nav>
+        <div class="header-panel">
+            <h1 class="playwrite-cu">The Reynolds Pamphlet</h1>
+            <div class="right-bar">
+                <ul class="navigation">
+                    <li>
+                        <ul>
+                            <li class="dropdown">
+                            <a href="" class="dropbtn"><i class="fa-solid fa-ellipsis-vertical fa-2x"></i></a>
+                            <div class="dropdown-content">
+                                <a href="#Confessions">Confessions</a>
+                                <a href="faq.html">FAQs</a>
+                                <a href="Feed.html">Feedback</a>
+                            </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="confession-section"></div>
+        <div class="envelope hidden" id="envelope">
+            <div class="flap"></div>
+            <div class="seal"></div>
+        </div>
+        <div class="form-container" id="form-container">
+            <form id="confession-form">
+                <label for="username">Confessor Name:</label><br>
+                <input type="text" id="username" name="username" required><br>
+
+                <div class="Confession-dropdown">
+                    <button class="Confession-btn">Categories<i class="fa fa-caret-down"></i></button>
+                    <div class="dropdown-cont">
+                      <a href="#">Love</a>
+                      <a href="#">Tea/Drama</a>
+                      <a href="#">Campus Scandals</a>
+                      <a href="#">Mental Health</a>
+                    </div>
+                  </div>
+
+                <label for="confession">Your Confession:</label><br>
+                <textarea id="confession" name="confession" rows="5" cols="10" required></textarea><br>
+                <button type="submit">Submit Confession</button>
+            </form>
+        </div>
+        <div class="thank-you hidden" id="thank-you-message">
+            <p>Thanks for submitting a confession! 😆</p>
+            <div class="button-container">
+                <a href=""><button type="button" id="back-home">Back Home</button></a>
+                <a href="confessions.html"><button type="button" id="view-confessions">View Confessions</button></a>
+                <a href="make_confession.html"><button type="button" id="make-another" class="hidden">Make Another Confession</button></a>
+            </div>
+        </div>
+    </div>
+    <script src="JS/make_confession.js"></script>
+</body>
+</html>
