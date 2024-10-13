@@ -1,0 +1,183 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    align-items: center;
+    padding: 20px;
+}
+
+.comment-list {
+    display: grid;
+    max-width: 1250px;
+    margin: 150px auto;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .comment-list .card-item {
+    background-color: #ffd8e3 ;
+    padding: 26px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    cursor: pointer;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: border 0.5s ease;
+  }
+  .comment-list .card-item:hover {
+    border: 2px solid #850d37;
+  }
+
+  .comment-list .developer  {
+    background-color: #F7DFF5; 
+    color: #B22485;
+  }  
+
+  .comment-list span {
+    display: inline-block;
+    background: #6c1865;
+    margin-top: 32px;
+    padding: 8px 15px;
+    font-size: 0.75rem;
+    border-radius: 50px;
+    font-weight: 600;
+  }
+
+  .card-item h3 {
+    color: #000;
+    font-size: 1.438rem;
+    margin-top: 28px;
+    font-weight: 600;
+  }
+
+  .comment-item .card-item {
+    min-width: 300px; /* Width of each card */
+  }
+/* Sidebar for the profile card */
+.sidebar {
+    flex: 1;
+    max-width: 300px;
+    margin-right: 20px;
+    padding: 20px;
+    background-color: #ffe4e1;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.sidebar .profile-badge {
+    font-size: 14px;
+    background-color: #f3d1ff;
+    color: #a254ff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.sidebar p {
+    font-size: 16px;
+    color: black;
+    margin: 0;
+}
+
+/* Comment Section */
+.comment-section {
+    flex: 2;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.comment-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.comment {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.comment:last-child {
+    border-bottom: none;
+}
+.comment-author {
+    font-weight: bold;
+}
+.comment-time span{
+    color: gray;
+    font-size: 12px;
+}
+.comment-body {
+    margin-top: 5px;
+}
+.interaction-bar {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+.like-btn, .reply-btn {
+    background-color: transparent;
+    border: none;
+    color: #f56;
+    cursor: pointer;
+}
+.like-btn:hover, .reply-btn:hover {
+    color: #c33;
+}
+.reply-form {
+    display: none;
+    margin-left: 30px;
+    
+}
+.comment-input {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    resize: none;
+}
+.submit-btn {
+    background-color: #f56;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.submit-btn:hover {
+    background-color: #c33;
+}
+
+#time {
+    display: inline-block;
+    background: #F7DFF5;
+    margin-top: 32px;
+    padding: 8px 15px;
+    font-size: 0.75rem;
+    border-radius: 50px;
+    font-weight: 600;
+  }
+
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .comment-list {
+        flex-direction: column;
+    }
+    .card-item {
+        margin-right: 0;
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+}
+

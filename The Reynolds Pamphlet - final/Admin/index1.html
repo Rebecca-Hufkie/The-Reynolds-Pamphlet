@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User Management Table</title>
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                border: 1px solid #ddd;
+                border-spacing: 0;
+            }
+
+            th, td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+
+            th {
+                background-color: #f2f2f2;
+                font-weight: bold;
+            }
+
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            /* Styling   
+            for buttons */
+            .ban-user-btn, .unban-user-btn {
+                background-color: #f44336;
+                color: white;
+                padding: 10px 15px;
+                border: none;
+                cursor: pointer;
+                font-size: 14px;
+                border-radius: 4px;
+                margin: 0 5px;
+            }
+
+            .ban-user-btn:hover, .unban-user-btn:hover {
+                background-color: #ff5722;
+            }
+
+            /* Additional styling */
+            .status-active {
+                color: green;
+            }
+
+            .status-banned {
+                color: red;
+            }
+
+            /* Small circular indicators */
+            .circle {
+                border-radius: 50%; /* Circular shape */
+                width: 0.4375rem; /* Fixed width */
+                height: 0.4375rem; /* Fixed height */
+                display: inline-block; /* Inline block display */
+            }
+
+            /* Styles for banned users */
+            #banned {
+                color: #ef3e3e; /* Red text color */
+                padding: 0.3125rem 0.625rem;
+                border: 0.03125rem solid #ef3e3e;
+                border-radius: 0.9375rem;
+                font-size: 0.75rem;
+            }
+
+            /* Colors for banned circle */
+            #banned .circle {
+                background-color: #ef3e3e; /* Red color for high-risk priority circle */
+            }
+
+
+            /* Styles for active users */
+            #active {
+                color: #81C784; /* Red text color */
+                padding: 0.3125rem 0.625rem;
+                border: 0.03125rem solid #81C784;
+                border-radius: 0.9375rem;
+                font-size: 0.75rem;
+            }
+
+            /* Colors for active circle */
+            #active .circle {
+                background-color: #81C784; /* Red color for high-risk priority circle */
+            }
+
+
+        </style>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>In Stage</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Alberta Flores</td>
+                    <td><span id='active'><span class='circle'></span>&nbsp;&nbsp;Active</span></td>
+                    <td>1 day</td>
+                    <td><button class="ban-user-btn">Ban User</button> <button class="unban-user-btn">Unban User</button></td>
+                </tr>
+                <tr>
+                    <td>Brooklyn Simmons</td>
+                    <td><span id='active'><span class='circle'></span>&nbsp;&nbsp;Active</span></td>
+                    <td>1 day</td>
+                    <td><button class="ban-user-btn">Ban User</button> <button class="unban-user-btn">Unban User</button></td>
+                </tr>
+                <tr>
+                    <td>Ralph Edwards</td>
+                    <td><span id='active'><span class='circle'></span>&nbsp;&nbsp;Active</span></td>
+                    <td>1 day</td>
+                    <td><button class="ban-user-btn">Ban User</button> <button class="unban-user-btn">Unban User</button></td>
+                </tr>
+                <tr>
+                    <td>Jane Cooper</td>
+                    <td><span id='active'><span class='circle'></span>&nbsp;&nbsp;Active</span></td>
+                    <td>1 day</td>
+                    <td><button class="ban-user-btn">Ban User</button> <button class="unban-user-btn">Unban User</button></td>
+                </tr>
+                <tr>
+                    <td>Cameron Williamson</td>
+                    <td><span id='active'><span class='circle'></span>&nbsp;&nbsp;Active</span></td>
+                    <td>1 day</td>
+                    <td><button class="ban-user-btn">Ban User</button> <button class="unban-user-btn">Unban User</button></td>
+                </tr>
+                <tr>
+                    <td>Bessie Cooper</td>
+                    <td><span id='banned'><span class='circle'></span>&nbsp;&nbsp;Banned</span></td>
+                    <td>4 days</td>
+                    <td><button class="ban-user-btn">Ban User</button> <button class="unban-user-btn">Unban User</button></td>
+                </tr>
+                <tr>
+                    <td>Arlene McCoy</td>
+                    <td><span id='banned'><span class='circle'></span>&nbsp;&nbsp;Banned</span></td>
+                    <td>4 days</td>
+                    <td><button class="ban-user-btn">Ban User</button> <button class="unban-user-btn">Unban User</button></td>
+                </tr>
+                <tr>
+                    <td>Floyd Miles</td>
+                    <td><span id='banned'><span class='circle'></span>&nbsp;&nbsp;Banned</span></td>
+                    <td>4 days</td>
+                    <td><button class="ban-user-btn">Ban User</button> <button class="unban-user-btn">Unban User</button></td>
+                </tr>
+                <tr>
+                    <td>Kristin Watson</td>
+                    <td><span id='banned'><span class='circle'></span>&nbsp;&nbsp;Banned</span></td>
+                    <td>4 days</td>
+                    <td><button class="ban-user-btn">Ban User</button> <button class="unban-user-btn">Unban User</button></td>
+                </tr>
+                <tr>
+                    <td>Esther Howard</td>
+                    <td><span id='banned'><span class='circle'></span>&nbsp;&nbsp;Banned</span></td>
+                    <td>3 days</td>
+                    <td><button class="ban-user-btn">Ban User</button> <button class="unban-user-btn">Unban User</button></td>
+                </tr>
+                <tr>
+                    <td>Jerome Bell</td>
+                    <td><span id='banned'><span class='circle'></span>&nbsp;&nbsp;Banned</span></td>
+                    <td>7 days</td>
+                    <td><button class="ban-user-btn">Ban User</button> <button class="unban-user-btn">Unban User</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

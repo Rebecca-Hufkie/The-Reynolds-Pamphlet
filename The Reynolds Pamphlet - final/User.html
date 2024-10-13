@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Page</title>
+  <link rel = "stylesheet" href = "CSS/user.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap" rel="stylesheet">
+
+  <script src="JS/profile.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav></nav>
+      <div class="header-panel">
+          <h1 class="playwrite-cu">The Reynolds Pamphlet</h1>
+      <div class="nav-bar">
+          <ul class="navigation">
+            <li>
+                <ul>    
+                    <li class="dropdown">
+                      <a href="" class="dropbtn"><i class="fa-solid fa-ellipsis-vertical fa-2x"></i></a>
+                      <div class="dropdown-content">
+                        <a href="confessions.html">Confessions</a>
+                        <a href="faq.html">FAQs</a>
+                        <a href="#contact">Feedback</a>
+                      </div>
+                    </li>
+                  </ul>
+            </li>
+              
+          <li><button class="custom-button" id="logoutButton">LogOut</button></li>
+          </ul>   
+                
+    </div>
+    </div>   
+</nav>   
+  </header>
+
+<div class = "body-container">
+<div class="row">
+  <!-- Left Column: Contact Card -->
+  <div class="column column2">
+            <img src="Images/facepic.png" alt="profilePic"  id = "myImg">
+            <div id = "myModal" class = "modal">
+              <span class = "close">&times;</span>
+              <img class = "modal-content" id = "img01">
+            </div>
+            <div class = "card-container">
+              <h3 style = "font-size: 2em;" class="playwrite-cu"><b>Username</b></h3>
+            </div>  
+     </div> 
+  
+
+  <!-- Right Column: Feedback Form -->
+  <div class="column column1">
+    <div id = "details" class = "contact-card">
+      <div class = "card-container" id="card-container">
+        <h3 id = "details" class="playwrite-cu">Details</h3>
+        <h6 style="text-align: left; padding-left:20px;">Firstname</h6>
+        <p class = "detailsPara"><span id = "Firstname-display">Bob</span></p>
+
+        <h6 style="text-align: left; padding-left:20px;">Lastname</h6>
+        <p class = "detailsPara"><span id = "username-display">Burger</span></p>
+
+        <h6 style="text-align: left; padding-left:20px;">Email</h6>
+        <p class = "detailsPara"><span id = "email-display">user123@example.com</span></p>
+
+        <h6 style="text-align: left; padding-left:20px;">Alias</h6>
+        <p class = "detailsPara"><span id = "username-display">WhosBob</span></p>
+      </div> 
+
+      <!-- form to edit details - hidden by default -->
+      <form id="edit_profile_form" action="" method="post">
+        <h3 id = "details" class="playwrite-cu">Details</h3>
+        <!--FirstName-->
+        <h6 style="text-align: left; padding-left:20px;">First Name</h6>
+        <p class="error" id="nameError"></p>
+        <input class = "detailsPara" style="border: 0rem; width: 95%;" type="text" name="First-name" id="first-name" value="user123"><br>      
+        
+        <!--LastName-->  
+        <h6 style="text-align: left; padding-left:20px;">Last Name</h6>
+        <p class="error" id="nameError"></p>
+        <input class = "detailsPara" style="border: 0rem; width: 95%;" type="text" name="Last-name" id="last-name" value="user123"><br>   
+        
+        <!--Email-->
+        <h6 style="text-align: left; padding-left:20px;">Email</h6>
+        <p class="error" id="emailError"></p>
+        <input class = "detailsPara" style="border: 0rem; width: 95%;" type="email" name="user-email" id="user-email" value="user123@example.com"><br>
+
+        <!--Alias-->
+        <h6 style="text-align: left; padding-left:20px;">Alias</h6>
+        <p class="error" id="nameError"></p>
+        <input class = "detailsPara" style="border: 0rem; width: 95%;" type="text" name="user-name" id="user-name" value="user123"><br>     
+
+      </form>
+
+      <div>
+        <p><a href = "MyConfessions.php"><button class="custom-button" id="confessions">My Confessions</button></a></p>
+        <p><button class="custom-button" id="edit-profile">Edit Profile</button></p>
+        <p><button class="custom-button" id="delete-account">Delete Account</button></p>
+        <button id = "save-Button" class = "custom-button" style="display:none;">Save Changes</button>
+      </div>
+
+      <!-- Delete Popup -->
+      <div id = "delete-popup" class = "popup">
+        <div class = "popup-content">
+          <a href = "#" class = "close-btn">&times;</a>
+          <h2>Are you sure you want to delete your?</h2>
+          <button id="confirmButton">Yes</button>
+          <button id = "cancelButton" >Cancel</button>
+        </div>
+      </div>
+      <script src ="JS/profile.js"></script>  
+    </div>
+  </div>
+  
+</div>
+<script src="JS/profile.js"></script>
+</div>  
+
+
+<footer>
+  <div class="item">
+  <p>
+      <h4><p class="playwrite-cu">The Reynolds Pamphlet</p> &copy;2024 | Contact Us on GitHub: <a href="https://github.com/Wakag/Gears-of-Miracles" style=" color: #944a8a;">Gears-of-Miracles</a></h4>
+  </p>
+  </div>
+  <div class="item">
+      
+      <table style="align-items: right;">
+          <tr><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram fa-2x">&nbsp;&nbsp;</i></a></tr>
+          <tr><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook fa-2x">&nbsp;&nbsp;</i></a></tr>
+          <tr><a href="https://www.tiktok.com/explore"><i class="fa-brands fa-tiktok fa-2x">&nbsp;&nbsp;</i></a></tr>
+          <tr><a href="https://www.youtube.com/watch?v=P3Nmt3Ttcic"><i class="fa-brands fa-youtube fa-2x">&nbsp;&nbsp;</i></a></tr>
+      </table>
+  </div>
+</footer>
+
+</body>
+</html>

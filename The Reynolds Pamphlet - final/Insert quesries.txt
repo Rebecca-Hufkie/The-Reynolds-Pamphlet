@@ -1,0 +1,2 @@
+insert into comment (commentUserID, content, commentDate, confessionID, likes)
+values (3, 'Note to self: Never get between Yuki and her snacks. Might just pedal the other way next time...',  now(), 1, 22);

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Reynolds Pamphlet</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap" rel="stylesheet">
+
+    <script defer src="JS/home.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="header-panel">
+            <h1 class="playwrite-cu"><a href="#"></a>The Reynolds Pamphlet</h1>
+        <div class="right-bar">
+            <ul class="navigation">
+                <li>
+                    <ul>
+
+                        <li class="dropdown">
+                          <a href="" class="dropbtn"><i class="fa-solid fa-ellipsis-vertical fa-2x"></i></a>
+                          <div class="dropdown-content">
+                            <a href="#Confessions">Confessions</a>
+                            <a href="#About">About</a>
+                            <a href="faq.html">FAQs</a>
+                          </div>
+                        </li>
+                      </ul>
+                </li>
+                
+               
+                <li><a href="#signup-popup"><button class="custom-button">Sign Up</button></a></li>
+                <li><a href="#login-popup"><button class="custom-button">Login</button></a></li>
+            </ul>
+            <!-- Login Popup -->
+            <div id = "login-popup" class = "popup">
+                <div class = "popup-content">
+                  <a href = "#" class = "close-btn">&times;</a>
+                  <h2>Login</h2>
+                  <form action = "login.php" method="post">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password2" required><br><br>
+
+                    <button type="submit">Login</button>
+                  </form>
+                </div>
+              </div>
+
+              <!-- Sign Up Popup --->
+              <div id="signup-popup" class="popup">
+                <div class="popup-content">
+                    <a href="#" class="close-btn">&times;</a>
+                    <h2>Sign Up</h2>
+                    <form action="signup.php" method="post" class="signup-form" onsubmit="return validateForm()">
+                        <div class="input-group">
+                            <div class="input-item">
+                                <label for="Name">First Name:</label>
+                                <input type="text" id="Name" name="Name" required>
+                            </div>
+                            <div class="input-item">
+                                <label for="LastName">Last Name:</label>
+                                <input type="text" id="lastname" name="LastName" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-item">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email">
+                            </div>
+                            <div class="input-item">
+                                <label for="user">Username:</label>
+                                <input type="text" id="user" name="user">
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-item">
+                                <label for="alias">Alias:</label>
+                                <input type="text" id="alias" name="alias">
+                            </div>
+                            <div class="input-item">
+                                <label for="password">Password:</label>
+                                <input type="password" id="password" name="password" required>  
+                            </div>
+                        </div>
+                        <div class="input-item">
+                            <label for="password">Password Recovery Hint:</label>
+                            <input type="text" id="salt" name="salt" required>  
+                        </div>
+
+                        <button type="submit">Sign up</button>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+        </div>   
+    </nav>
+
+    <div id="new-section"></div>
+
+    <script>
+        // 1. Change the document title dynamically
+        document.title = "Welcome to The Reynolds Pamphlet";
+
+        // 2. Modify the main title text
+        document.getElementById('main-title').innerHTML = "<a href='#'>The Scandalous Pamphlet</a>";
+
+        // 3. Style the main title using the style property
+        document.getElementById('main-title').style.color = "darkred";
+        document.getElementById('main-title').style.fontSize = "3rem";
+
+        // 4. Add a new element to the DOM
+        const newSection = document.createElement('section');
+        newSection.id = "special-announcement";
+
+        // 5. Create text for the new element and append it
+        const sectionText = document.createTextNode("Breaking News: The scandal grows larger!");
+        newSection.appendChild(sectionText);
+
+        // Append the new section to the existing div
+        document.getElementById('new-section').appendChild(newSection);
+
+        // 6. Add class to the new section to style it
+        newSection.classList.add('highlighted');
+
+        // 7. Set an attribute dynamically to the dropdown content (adding tooltip)
+        document.querySelector('.dropdown-content').setAttribute('title', 'Click for more!');
+
+        // 8. Dynamically remove an element (removing the login button)
+        const navList = document.getElementById('nav-list');
+        const loginButton = document.querySelector('a[href="#login-popup"]');
+        navList.removeChild(loginButton.parentElement);
+
+        // 9. Modify innerHTML of the browser info
+        document.getElementById('browserName').innerHTML = `Browser Name: ${navigator.appName}`;
+        document.getElementById('browserVersion').innerHTML = `Browser Version: ${navigator.appVersion}`;
+        document.getElementById('browserPlatform').innerHTML = `Platform: ${navigator.platform}`;
+        document.getElementById('javaEnabled').innerHTML = `Java Enabled: ${navigator.javaEnabled()}`;
+
+        // 10. Add an event listener to dynamically change style on hover using classList
+        const titleElement = document.getElementById('main-title');
+        titleElement.addEventListener('mouseover', function() {
+            titleElement.classList.add('hovered');
+        });
+        titleElement.addEventListener('mouseout', function() {
+            titleElement.classList.remove('hovered');
+        });
+
+        
+
+    </script>
+
+    <style>
+        /* Additional styles for the new elements */
+        .highlighted {
+            background-color: yellow;
+            padding: 10px;
+            font-size: 1.5rem;
+        }
+
+        .hovered {
+            text-decoration: underline;
+            color: blue;
+        }
+        /* Slideshow */
+        .slideshow-container {
+            position: relative; /* Make the slideshow container a positioning context */
+            max-width: 100%;
+            margin: 0px auto;
+        }
+
+        .slides {
+            display: none;
+            position: relative; /* Position context for overlay text */
+        }
+
+        .overlay-text {
+            position: absolute;
+            top: 60%; /* Position text at the bottom of the slide */
+            left: 50%; /* Center the text horizontally */
+            transform: translate(-50%, -50%); /* Adjust positioning */
+            color: rgb(22, 21, 21); /* Text color */
+            font-size: 35px; /* Base font size */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Optional: add text shadow for better visibility */
+            text-align: center; /* Center text alignment */
+            width: 100%; /* Make the overlay take the full width */
+            font-weight: 500;
+        }
+
+        /* Responsive Text Size */
+        @media screen and (max-width: 768px) {
+            .overlay-text {
+                font-size: 18px; /* Smaller font size on smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .overlay-text {
+                font-size: 16px; /* Even smaller font size on mobile */
+            }
+        }
+
+
+        .slide-image {
+            width: 100%;
+            height: auto;
+        }
+
+
+
+        
+    </style>
+
+
+
+    <main>
+        <section class="slideshow-container" style="padding: 20px 0px ;">
+            <div class="slides">
+                <img src="Images/kiss wallpaper.jpg" alt="Slide 2" class="slide-image">
+                <div class="overlay-text">Welcome to where the juiciest secrets and the latest gossip come and a touch of romance to life!</div>
+            </div>
+            </section>
+
+        <section id="Confessions" style="padding: 20px auto;">
+            <h1 class="playwrite-cu" style="font-size: 2.5rem; align-items: center;">Confessions</h1>
+            <div class="card-list">
+                <a href="#" class="card-item">
+                    
+                    <span class="developer">3rd year Hamilton lover</span>
+                    <h3> I heard Yuki is mean and steals people's food. She even slapped Waka and punched her in the face then the ambulance had to be called</h3>
+                 
+                </a>
+                <a href="#" class="card-item">
+                   
+                    <span class="designer">Monument</span>
+                    <h3>I heard Yuki stabbed Rebecca and then asked Tywin to help her get rid of the body. Apparently the Rebecca we know now is a clone. I wont let her go without justice! Im coming for you baby <3 </h3>
+                  
+                </a>
+                <a href="#" class="card-item">
+                    
+                    <span class="editor">Teletubbie</span>
+                    <h3>I want to let Waka know that i have always loved her I wont let this long distance stop us - 3rd year short CS gent</h3>
+              
+                </a>
+                <a href="#" class="card-item">
+                    
+                    <span class="editor">Anonymous</span>
+                    <h3>Has anybody ever wondered where Thomas gets all that money - concered CS student who saw him beating up little children so that they can give him money</h3>
+                   
+                </a>
+                <a href="#" class="card-item">
+                    
+                    <span class="editor">Teletubbie</span>
+                    <h3>I want to let Waka know that i have always loved her I wont let this long distance stop us - 3rd year short CS gent</h3>
+              
+                </a>
+                <a href="#" class="card-item">
+                    
+                    <span class="editor">Anonymous</span>
+                    <h3>Has anybody ever wondered where Thomas gets all that money - concered CS student who saw him beating up little children so that they can give him money</h3>
+                   
+                </a>
+            </div>
+            <div class = "center-container">
+                <a href="#signup-popup"><button class="custom-button">Load More...</button></a>
+            </div>
+            </div>
+            
+            
+            
+        </section>
+
+        <section id="About" style="margin-top: 3%;" > 
+            <h1 class="playwrite-cu" style="font-size: 2.5rem; align-items: center;">About Us</h1>
+            <p class="robot-bold"> Meet the team behind The Reynolds Pamphlet! We're a diverse group with a passion for all things juicy and dramatic. Our team includes two beautiful and brilliant girls who 
+                bring creativity and flair to every project, alongside two  ogres. Together, we blend charm and innovation to create the ultimate 
+                space for gossip, romance, and intrigue. Whether we're coding, designing, or just brainstorming the next big thing, we’re here to make sure you get the scoop and find a little magic in every whisper!</p>
+            <div class="card-list">
+                <a href="#" class="card-item">
+                    <img src="Images/Worker1nice.png" alt="Card Image" style="aspect-ratio: 16 / 16;">
+                    <span class="developer">CEO</span>
+                    <h3> Wakanaka is the driving force behind the team's vision and growth as the CEO. With her dynamic leadership style and strategic mindset, she oversees all aspects of the company</h3>
+                 
+                </a>
+                <a href="#" class="card-item">
+                    <img src="Images/Worker3.png" alt="Card Image" style="aspect-ratio: 16 / 16;">
+                    <span class="designer">CTO</span>
+                    <h3> As the Chief Technology Officer, Rebecca is the technical mastermind who ensures the company stays at the forefront of technological advancements. She oversees the development and implementation of tech </h3>
+                  
+                </a>
+                <a href="#" class="card-item">
+                    <img src="Images/Worker4.png" alt="Card Image" style="aspect-ratio: 16 / 16;">
+                    <span class="editor">Intern</span>
+                    <h3>Amogelang is a motivated and hardworking software development intern who plays an integral role in the team’s day-to-day operations. </h3>
+              
+                </a>
+                <a href="#" class="card-item">
+                    <img src="Images/Worker2.png" alt="Card Image" style="aspect-ratio: 16 / 16;">
+                    <span class="editor">Intern</span>
+                    <h3>Derrick is a dedicated software development intern who brings creativity, curiosity, and a fresh perspective to the team.</h3>
+                   
+                </a>
+            </div>
+            
+        </section>
+      
+    </main>
+    <footer>
+        <div class="item">
+        <p>
+            <h4><p class="playwrite-cu">The Reynolds Pamphlet</p> &copy;2024 | Contact Us on GitHub: <a href="https://github.com/Wakag/Gears-of-Miracles" style=" color: #944a8a;">Gears-of-Miracles</a></h4>
+        </p>
+        </div>
+        <div class="item">
+            
+            <table style="align-items: right;">
+                <tr><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram fa-2x">&nbsp;&nbsp;</i></a></tr>
+                <tr><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook fa-2x">&nbsp;&nbsp;</i></a></tr>
+                <tr><a href="https://www.tiktok.com/explore"><i class="fa-brands fa-tiktok fa-2x">&nbsp;&nbsp;</i></a></tr>
+                <tr><a href="https://youtu.be/x_MQRNkRaUE?si=6zN4suQm9a3nL4y1"><i class="fa-brands fa-youtube fa-2x">&nbsp;&nbsp;</i></a></tr>
+            </table>
+        </div>
+        <div class="item" id="item">
+            <div id="browser-info" style="margin: 20px; font-size: 1.2rem;">
+                <strong>Browser Information:</strong>
+                <ul>
+                    <li id="browserName"></li>
+                    <li id="browserVersion"></li>
+                    <li id="browserPlatform"></li>
+                    <li id="javaEnabled"></li>
+                </ul>
+            </div>
+        </div>
+      </footer>
+      <script>
+        // Access navigator object properties
+        document.getElementById('browserName').innerText = `Browser Name: ${navigator.appName}`;
+        document.getElementById('browserVersion').innerText = `Browser Version: ${navigator.appVersion}`;
+        document.getElementById('browserPlatform').innerText = `Platform: ${navigator.platform}`;
+        
+        // Check if Java is enabled
+        document.getElementById('javaEnabled').innerText = `Java Enabled: ${navigator.javaEnabled()}`;
+
+        // Sending a small beacon to the server when the page is closed or unloaded
+        window.addEventListener('unload', function() {
+            const url = '/your-server-endpoint';
+            const data = JSON.stringify({ message: 'User closed the page' });
+            navigator.sendBeacon(url, data);
+        });
+      
+
+    function validateForm() {
+    // Get the form elements
+    const name = document.getElementById('Name').value.trim();
+    const lastName = document.getElementById('LastName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    // Regular expression for validating email
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    // Validate Name field
+    if (name === "") {
+      alert("Name is required.");
+      return false;
+    }
+
+    // Validate Last Name field
+    if (lastName === "") {
+      alert("Last Name is required.");
+      return false;
+    }
+
+    // Validate Email field
+    if (email === "") {
+      alert("Email is required.");
+      return false;
+    } else if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address.");
+      return false;
+    }
+
+    // Validate Password field
+    if (password === "") {
+      alert("Password is required.");
+      return false;
+    } else if (password.length < 6) {
+      alert("Password must be at least 6 characters long.");
+      return false;
+    }
+
+    // If all validations pass, return true to allow form submission
+    return true;
+  }
+
+
+    </script>
+
+
+</body>
+</html>

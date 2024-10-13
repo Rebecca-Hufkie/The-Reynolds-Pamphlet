@@ -1,0 +1,187 @@
+/* Table styling */
+table {
+    border-collapse: collapse; /* Ensures table borders merge */
+    width: 100%; /* Table takes up the full width of its container */
+    border: 0.0625rem solid #ddd; /* Border width set for consistency with other elements */
+    border-spacing: 0; /* No spacing between table cells */
+}
+
+th, td {
+    border: 0.0625rem solid #ddd; /* Consistent border width for cells */
+    padding: 0.5rem; /* Padding for spacing within cells */
+    text-align: center; /* Aligns text to the center within each cell */
+}
+
+.text, td {
+    font-weight: 520;
+}
+
+th {
+    background-color: #f2f2f2; /* Light gray background for headers */
+    font-weight: bold; /* Makes header text bold */
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Alternating row color for better readability */
+}
+
+/* Styling for ban button */
+.ban-user-btn {
+    font-family: "Roboto", sans-serif;
+    font-weight: 800; /* Bold text */
+    border-radius: 5em;
+    background-color: #EA638C; /* Button background */
+    color: #360a30; /* Button text color */
+    padding: 0.625rem 0.9375rem; /* Padding adjusted for consistent sizing */
+    border: none; /* Removes default border */
+    cursor: pointer; /* Changes cursor to pointer to indicate interactivity */
+    font-size: 1rem; /* Responsive font size for buttons */
+    font-weight: bold; /* Makes the button text bold */
+    transition: background-color 0.3s ease; /* Smooth color change on hover */
+}
+
+/* Styling for unban button */
+.unban-user-btn {
+    font-family: "Roboto", sans-serif;
+    font-weight: 800; /* Bold text */
+    border-radius: 5em;
+    background-color: #f8d4fd; /* Red background for danger actions */
+    color: black; /* White text for contrast */
+    padding: 0.625rem 0.9375rem; /* Padding adjusted for consistent sizing */
+    border: none; /* Removes default border */
+    cursor: pointer; /* Changes cursor to pointer to indicate interactivity */
+    font-size: 0.875rem; /* Responsive font size for buttons */
+     /* Rounded corners */
+    margin: 0 0.3125rem; /* Horizontal margin for spacing between buttons */
+}
+.user-btn {
+    font-family: "Roboto", sans-serif;
+    font-weight: 800; /* Bold text */
+    border-radius: 5em;
+    background-color: #f8d4fd; /* Red background for danger actions */
+    color: black; /* White text for contrast */
+    padding: 0.625rem 0.9375rem; /* Padding adjusted for consistent sizing */
+    border: none; /* Removes default border */
+    cursor: pointer; /* Changes cursor to pointer to indicate interactivity */
+    font-size: 0.875rem; /* Responsive font size for buttons */
+     /* Rounded corners */
+    margin: 0 0.3125rem; /* Horizontal margin for spacing between buttons */
+}
+
+
+.ban-user-btn:hover, .unban-user-btn:hover {
+    background-color: #f8d4fd; /* Changes color on hover for feedback */
+}
+
+/* Button focus effect */
+.custom-button:focus {
+outline: none; /* Removes the default outline */
+box-shadow: 0 0 0 3px rgba(255, 42, 173, 0.5); /* Adds a shadow for focus state */
+}
+  
+/* Additional styling for status indicators */
+.status-active {
+    color: green; /* Green color to indicate active status */
+    font-weight: bolder;
+}
+
+.status-banned {
+    color: red; /* Red color to indicate banned status */
+}
+
+/* Small circular indicators */
+.circle {
+    border-radius: 50%; /* Circular shape */
+    width: 0.4375rem; /* Fixed width to maintain circular shape */
+    height: 0.4375rem; /* Fixed height to maintain circular shape */
+    display: inline-block; /* Allows the circle to behave like text */
+}
+
+/* Styles for banned users */
+#banned {
+    color: #ef3e3e; /* Red text color for banned status */
+    padding: 0.3125rem 0.625rem; /* Padding to create space around the text */
+    border: 0.03125rem solid #ef3e3e; /* Red border to match text color */
+    border-radius: 0.9375rem; /* Rounded edges for styling */
+    font-size: 0.75rem; /* Small font size for compact appearance */
+}
+
+/* Colors for banned circle */
+#banned .circle {
+    background-color: #ef3e3e; /* Red color for high-risk priority circle */
+}
+
+/* Styles for active users */
+#active {
+    color: #81C784; /* Green text color for active status */
+    padding: 0.3125rem 0.625rem; /* Padding for spacing */
+    border: 0.03125rem solid #81C784; /* Border matching the green text */
+    border-radius: 0.9375rem; /* Rounded edges for styling */
+    font-size: 0.75rem; /* Responsive font size */
+}
+
+/* Colors for active circle */
+#active .circle {
+    background-color: #81C784; /* Green color for active status indicator */
+}
+
+th {
+    font-size: larger;
+    background-color: aquamarine;
+}
+
+.sidebar-icon {
+    width: 0.5rem; /* Adjust this value to match the size of the FontAwesome icons */
+    height: 5px;
+    vertical-align: middle; /* Align it with the text */
+    margin-right: 0.5rem; /* Add some space between the icon and the text */
+}
+
+ /* Sliding Side Panel */
+ .side-panel {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.side-panel a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+.side-panel .close-btn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    display: block;
+}
+
+#table {
+    border-collapse: collapse; /* Collapses table borders */
+    border-radius: 0.9375rem; /* Rounded corners for table */
+    background-color: #fff; /* Background color for table */
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    table-layout: fixed;
+    width: 100%; /* Full width table */
+    position: relative;
+}
+
+/* Make table headers stick in place when scrolling */
+table thead {
+    position: sticky;
+    top: 69px;
+    /* background-color: #EA638C; Ensure background is set to avoid transparency issues */
+    z-index: 100; /* Ensure header stays above the other table content */
+    color: white;
+}

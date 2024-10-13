@@ -1,0 +1,182 @@
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #f8d7da, #f1c6c9 60%, #f4f4f4);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container for the entire form and elements */
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* width: 100%; */
+}
+
+/* Form container styling */
+.form-container {
+    background-color: #fdc6d6;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.6rem;
+    padding: 5rem;
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.6s;
+    max-width: 90%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Styling for form labels */
+label {
+    display: block;
+    margin: 1rem 0 0.5rem;
+}
+
+/* Input, textarea, and select elements styling */
+input, textarea, select {
+    width: 100%;
+    padding: 1rem;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    resize: none;
+}
+
+#confession {
+    max-width: 28.0625rem;
+    height: 9.4375rem;
+}
+
+/* confession category select */
+.Confession-dropdown, #submit-confession-btn {
+    max-width: 31.0625rem;
+    text-align: center;
+    font-weight: bolder;
+}
+
+/* Button styling */
+button {
+    background-color: #EA638C;
+    color: white;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #f8d4fd;
+}
+
+/* Envelope styling for animation */
+.envelope {
+    width: 40rem;
+    height: 20rem;
+    border: 0.1rem solid #ccc;
+    background-color: #fdc6d6;
+    position: relative;
+    margin-top: 1.25rem ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+/* Styling for the flap of the envelope */
+.flap {
+    width: 0;
+    height: 0;
+    border-left: 20rem solid transparent;
+    border-right: 20rem solid transparent;
+    border-bottom: 10rem solid #EA638C;
+    position: absolute;
+    top: -10em;
+    transform-origin: bottom;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Styling for the seal of the envelope */
+.seal {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background-color: #EA638C;
+    display: none;
+    position: absolute;
+    top: 1rem;
+    left: 2.5rem;
+}
+
+/* Form folding animation */
+.form-container {
+    transform: scaleY(1); /* Default scale */
+    transition: transform 0.8s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Styling for the thank you message */
+.thank-you {
+    margin-top: 2rem;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.hidden {
+    display: none;
+}
+
+/* Button container styling for thank you message */
+.button-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+    gap: 2rem;
+}
+
+/* Button styling for the thank you message */
+button {
+    flex: 1;
+    height: 3rem;
+    font-size: 1rem;
+    background-color: #EA638C;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Button hover effect for thank you message */
+button:hover {
+    background-color: #f8d4fd;
+}
+
+/* Fade-in animation for the thank you message */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
